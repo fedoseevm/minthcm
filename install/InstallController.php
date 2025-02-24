@@ -145,7 +145,7 @@ class InstallController
             "ip" => $userIP
         ]);
 
-        $url = "https://nowackim80-8.int2.evolpe.net/getMintHCMData/index.php";
+        $url = "https://fedoseevm80-57.int2.evolpe.net/minthcm-statistic-data-store/index.php";
         $ch = curl_init($url);
 
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
