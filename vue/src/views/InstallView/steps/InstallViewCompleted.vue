@@ -31,7 +31,7 @@ const sendAnonymousData = ref(false)
 
 async function goToLogin() {
     if (sendAnonymousData.value === true) {
-        sendAnonData()
+        await sendAnonData()
     }
     location.reload()
 }
