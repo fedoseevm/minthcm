@@ -37,7 +37,7 @@ async function goToLogin() {
 }
 
 async function sendAnonData() {
-    await axios.post(`api/install/sendAnonData`)
+    await axios.post(`api/anonData`)
     .catch(error => {
         console.error(error)
     })
