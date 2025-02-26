@@ -138,34 +138,4 @@ class InstallController
         }
     }
 
-    public function sendAnonData()
-    {
-        $userIP = $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER["REMOTE_ADDR"];
-        $anonData =  json_encode([
-            "ip" => $userIP
-        ]);
-
-        $url = "https://fedoseevm80-57.int2.evolpe.net/minthcm-statistic-data-store/index.php";
-        $ch = curl_init($url);
-
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, [
-            "Content-Type: application/json"
-        ]);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $anonData);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
-        curl_setopt($ch, CURLOPT_TIMEOUT, 3);
-        curl_setopt($ch, CURLOPT_HEADER, false);
-        
-        $response = curl_exec($ch);
-        if ($response === false) {
-            return false;
-        }
-        curl_close($ch);
-
-        return $response;
-    }
-
 }
