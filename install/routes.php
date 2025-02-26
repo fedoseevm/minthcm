@@ -36,9 +36,4 @@ $routes = [
         'method' => 'GET',
         'function' => 'checkStatus',
     ],
-    [
-        'path' => 'api/install/sendAnonData',
-        'method' => 'POST',
-        'function' => 'sendAnonData',
-    ],
 ];
